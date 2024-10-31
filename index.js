@@ -30,7 +30,7 @@ app.use(express.static('public'))
     // override
 app.use(methodOverride('_method'));
 const corsOptions = {
-    origin: ['https://luanvan-fe-3nzp.vercel.app', 'http://localhost:3001', 'https://warm-kangaroo-7d4c23.netlify.app'],
+    origin: ['https://luanvan-fe-3nzp.vercel.app/'],
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     credentials: true, // nếu bạn sử dụng cookie
 };
