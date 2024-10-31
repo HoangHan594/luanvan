@@ -16,6 +16,8 @@ database.connect();
 const clientRoute = require("./routes/client/index.route");
 const adminRoute = require("./routes/admin/index.route");
 const systemPrefix = require("./config/system")
+const mongoose = require('mongoose');
+
 
 const app = express();
 const port = process.env.PORT;
@@ -46,6 +48,15 @@ app.use(
     express.static(path.join(__dirname, "node_modules", "tinymce"))
 );
 // End TinyMCE
+
+mongoose.connect(process.env.MONGO_URL, { useNewUrlParser: true, useUnifiedTopology: true })
+    .then(() => {
+        console.log('Connected to MongoDB');
+    })
+    .catch((error) => {
+        console.error('Error connecting to MongoDB:', error);
+    });
+
 
 app.get('/', async(req, res) => {
     const dbState = mongoose.connection.readyState;
