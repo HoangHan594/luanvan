@@ -28,7 +28,7 @@ app.use(express.static('public'));
 // override
 app.use(methodOverride('_method'));
 const corsOptions = {
-    origin: ['https://luanvan-fe-3nzp.vercel.app', 'https://vercel.com/api/toolbar/link/luanvan-fe-3nzp-git-master-hoang-hans-projects.vercel.app?via=deployment-domains-list&p=1&page=/', 'https://vercel.com/api/toolbar/link/luanvan-fe-3nzp-8gjmrgi3q-hoang-hans-projects.vercel.app?via=deployment-domains-list&p=1&page=/'],
+    origin: ['https://luanvan-fe-3nzp.vercel.app', 'https://luanvan-fe-3nzp-git-master-hoang-hans-projects.vercel.app', 'https://luanvan-fe-3nzp-jlpirbmfq-hoang-hans-projects.vercel.app'],
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     credentials: true // nếu bạn sử dụng cookie
 };
