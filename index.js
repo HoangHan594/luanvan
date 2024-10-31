@@ -29,10 +29,13 @@ app.use(session({ cookie: { maxAge: 60000 } }));
 app.use(express.static('public'))
     // override
 app.use(methodOverride('_method'));
-app.use(cors());
+app.use(cors({
+    origin: 'https://luanvan-fe-3nzp.vercel.app', // Địa chỉ frontend của bạn
+}));
+
 
 // parse application/x-www-form-urlencoded
-app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.json());
 
 
