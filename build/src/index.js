@@ -29,7 +29,7 @@ app.use(express.static('public'));
 app.use(methodOverride('_method'));
 const corsOptions = {
     origin: ['https://luanvan-fe-3nzp.vercel.app', 'https://luanvan-fe-3nzp-git-master-hoang-hans-projects.vercel.app', 'https://luanvan-fe-3nzp-jlpirbmfq-hoang-hans-projects.vercel.app'],
-    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    methods: 'GET,PUT,PATCH,POST,DELETE',
     credentials: true // nếu bạn sử dụng cookie
 };
 app.use(cors(corsOptions));
