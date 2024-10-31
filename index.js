@@ -47,6 +47,12 @@ app.use(
 );
 // End TinyMCE
 
+app.get('/', async(req, res) => {
+    const dbState = mongoose.connection.readyState;
+    const status = dbState === 1 ? 'connected' : 'disconnected';
+    res.json({ database: status });
+});
+
 
 // Variables
 app.locals.adminPrefix = systemPrefix.adminPrefix;
