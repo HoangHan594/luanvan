@@ -3,7 +3,13 @@
     "version": "1.0.0",
     "main": "index.js",
     "scripts": {
-        "start": "nodemon --inspect index.js",
+        "lint": "eslint src --ext .js --report-unused-disable-directives --max-warnings 0",
+        "clean": "rd /s /q build && mkdir build",
+        "build-babel": "babel ./index.js -o ./build/src/index.js",
+        "build": "npm run clean && npm run build-babel",
+        "production": "npm run build && cross-env BUILD_MODE=production node ./build/src/index.js",
+        "dev": "cross-env BUILD_MODE=dev nodemon --exec babel-node ./src/index.js",
+        "start": "node ./build/src/index.js",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "author": "",
