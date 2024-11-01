@@ -34,7 +34,7 @@ const corsOptions = {
     credentials: true, // nếu bạn sử dụng cookie
 };
 
-app.use(cors(corsOptions));
+app.use(cors());
 
 
 // parse application/x-www-form-urlencoded
